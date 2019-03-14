@@ -1,0 +1,26 @@
+version: '3'
+services:
+  eureka-server:
+    image: eureka-server
+    ports:
+     - "8761:8761"
+  do-payment-service:
+    image: do-payment-service
+    depends_on:
+      - eureka-server
+    deploy:
+      mode: replicated
+      replicas: 2
+  validate-credit-card-service:
+    image: validate-credit-card-service
+    depends_on:
+      - eureka-server
+    deploy:
+      mode: replicated
+      replicas: 2
+  zuul-server:
+    image: zuul-server
+    depends_on:
+     - eureka-server
+    ports:
+     - "9090:9090"

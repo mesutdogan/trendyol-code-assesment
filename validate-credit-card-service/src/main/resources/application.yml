@@ -1,0 +1,30 @@
+server:
+  port: ${server_port:9098}
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: ${eureka_url:http://eureka-server:8761/eureka/}
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+spring:
+  application:
+    name: validate-credit-card-service
+  devtools:
+    remote:
+      secret: mysecret
+
+management:
+  security:
+    enabled: false
+
+
+ribbon:
+  eureka:
+    enabled: true

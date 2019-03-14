@@ -1,0 +1,31 @@
+server:
+  port: ${server_port:9090}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${eureka_url:http://eureka-server:8761/eureka/}
+
+zuul:
+  prefix: /services
+  routes:
+    card:
+      path: /card/**
+      service-id: validate-credit-card-service
+      retryable: true
+    payment:
+      path: /payment/**
+      service-id: do-payment-service
+      retryable: true
+
+spring:
+  application:
+    name: zuul-server
+
+management:
+  security:
+    enabled: false
+
+ribbon:
+  eureka:
+    enabled: true
