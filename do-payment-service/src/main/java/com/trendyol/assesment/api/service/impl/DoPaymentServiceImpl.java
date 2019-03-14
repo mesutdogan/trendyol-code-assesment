@@ -1,6 +1,9 @@
 package com.trendyol.assesment.api.service.impl;
 
 import com.trendyol.assesment.api.domain.*;
+import com.trendyol.assesment.api.domain.external.CardValidationStatus;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardRequest;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardResponse;
 import com.trendyol.assesment.api.repository.DoPaymentRepository;
 import com.trendyol.assesment.api.service.DoPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,8 +3,7 @@ package com.trendyol.assesment.api.service;
 import com.trendyol.assesment.api.domain.DoPaymentRequest;
 import com.trendyol.assesment.api.domain.DoPaymentResponse;
 import com.trendyol.assesment.api.domain.Payment;
-import com.trendyol.assesment.api.domain.ValidateCreditCardResponse;
-import org.springframework.stereotype.Service;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardResponse;
 
 /**
  * Do Payment Service Interface.

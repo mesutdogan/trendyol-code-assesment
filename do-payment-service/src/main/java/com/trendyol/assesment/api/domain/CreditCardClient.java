@@ -1,6 +1,8 @@
 package com.trendyol.assesment.api.domain;
 
 import com.trendyol.assesment.api.config.FeignConfigure;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardRequest;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardResponse;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
