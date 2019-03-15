@@ -11,9 +11,12 @@ import java.util.Objects;
 @Entity
 public class Payment {
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
 	private LocalDateTime date;
 	private PaymentStatus status;
 	private String customerId;
@@ -66,6 +69,10 @@ public class Payment {
 
 	public void setPaymentReference(String paymentReference) {
 		this.paymentReference = paymentReference;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	@Override

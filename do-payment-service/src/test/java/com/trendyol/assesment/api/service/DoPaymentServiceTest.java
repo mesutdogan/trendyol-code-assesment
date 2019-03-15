@@ -1,8 +1,11 @@
-package com.trendyol.assesment.service;
+package com.trendyol.assesment.api.service;
 
 import com.trendyol.assesment.api.domain.*;
+import com.trendyol.assesment.api.domain.external.CardValidationStatus;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardRequest;
+import com.trendyol.assesment.api.domain.external.ValidateCreditCardResponse;
+import com.trendyol.assesment.api.exception.MissingRequestException;
 import com.trendyol.assesment.api.repository.DoPaymentRepository;
-import com.trendyol.assesment.api.service.DoPaymentService;
 import com.trendyol.assesment.api.service.impl.DoPaymentServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
@@ -79,7 +82,7 @@ public class DoPaymentServiceTest {
 		Assert.assertNotNull(doPaymentResponse.getPaymentId());
 	}
 
-	@Test(expected = AssertionError.class)
+	@Test(expected = MissingRequestException.class)
 	public void whenPaymentRequestsNull_thenThrowAssertionError() {
 		doPaymentService.preparePaymentObject(null);
 	}

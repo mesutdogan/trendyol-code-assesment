@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "validate-credit-card-service", configuration = FeignConfigure.class)
 public interface CreditCardClient {
 
-	@RequestMapping(method = RequestMethod.POST, value = "/credit-card")
+	@RequestMapping(method = RequestMethod.POST, value = "/credit-card/validate")
 	ValidateCreditCardResponse validateCreditCard(ValidateCreditCardRequest validateCreditCardRequest);
 
 }

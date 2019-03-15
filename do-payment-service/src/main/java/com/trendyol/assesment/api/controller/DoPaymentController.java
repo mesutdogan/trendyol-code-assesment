@@ -24,7 +24,7 @@ public class DoPaymentController {
 	@Autowired
 	private DoPaymentService doPaymentService;
 
-	protected Logger LOGGER = Logger.getLogger(DoPaymentController.class.getName());
+	private Logger LOGGER = Logger.getLogger(DoPaymentController.class.getName());
 
 	/**
 	 * Delegates do payment request to {@link DoPaymentService#doPayment(DoPaymentRequest)} method

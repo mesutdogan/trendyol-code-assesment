@@ -4,6 +4,7 @@ import com.trendyol.assesment.api.domain.*;
 import com.trendyol.assesment.api.domain.external.CardValidationStatus;
 import com.trendyol.assesment.api.domain.external.ValidateCreditCardRequest;
 import com.trendyol.assesment.api.domain.external.ValidateCreditCardResponse;
+import com.trendyol.assesment.api.exception.MissingRequestException;
 import com.trendyol.assesment.api.repository.DoPaymentRepository;
 import com.trendyol.assesment.api.service.DoPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,9 +68,13 @@ public class DoPaymentServiceImpl implements DoPaymentService {
 	 *
 	 * @param doPaymentRequest
 	 * @return {@link Payment}
+	 *
+	 * @throws MissingRequestException if parameter is null.
 	 */
-	public Payment preparePaymentObject(DoPaymentRequest doPaymentRequest) {
-		assert doPaymentRequest != null;
+	public Payment preparePaymentObject(DoPaymentRequest doPaymentRequest) throws MissingRequestException {
+		if (doPaymentRequest == null) {
+			throw new MissingRequestException();
+		}
 		Payment payment = new Payment();
 		payment.setCustomerId(doPaymentRequest.getCustomerId());
 		payment.setDate(LocalDateTime.now());
