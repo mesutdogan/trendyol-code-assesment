@@ -34,9 +34,7 @@ public class DoPaymentController {
 	 * @return
 	 */
 	@RequestMapping
-	public DoPaymentResponse doPayment(
-			@RequestBody
-			final DoPaymentRequest doPaymentRequest) {
+	public DoPaymentResponse doPayment(@RequestBody final DoPaymentRequest doPaymentRequest) {
 		LOGGER.info("Payment processing started.");
 		return doPaymentService.doPayment(doPaymentRequest);
 	}
