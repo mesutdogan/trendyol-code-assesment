@@ -90,7 +90,7 @@ public class DoPaymentServiceTest {
 	@Test
 	public void whenPaymentRequestIsNotNull_thenPaymentEntityFieldsShouldBeFilled() {
 		Payment payment = doPaymentService.preparePaymentObject(doPaymentRequest);
-		Assert.assertNotNull("conflict1");
+		Assert.assertNotNull(payment.getCustomerId());
 		Assert.assertNotNull(payment.getDate());
 		Assert.assertNotNull(payment.getPaymentReference());
 		Assert.assertNotNull(payment.getTotalPrice());
