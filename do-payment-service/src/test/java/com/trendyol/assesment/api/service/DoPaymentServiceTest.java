@@ -94,5 +94,6 @@ public class DoPaymentServiceTest {
 		Assert.assertNotNull(payment.getDate());
 		Assert.assertNotNull(payment.getPaymentReference());
 		Assert.assertNotNull(payment.getTotalPrice());
+		//development1
 	}
 }
